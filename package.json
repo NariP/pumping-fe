@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "pumping-fe",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -8,7 +8,9 @@
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "test:ui": "vitest --ui",
+    "test": "vitest"
   },
   "dependencies": {
     "@remix-run/node": "^2.8.1",
@@ -25,6 +27,7 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
+    "@vitest/ui": "^1.5.0",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
@@ -38,7 +41,8 @@
     "prettier": "^3.2.5",
     "typescript": "^5.1.6",
     "vite": "^5.1.0",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "^1.5.0"
   },
   "engines": {
     "node": ">=18.0.0"

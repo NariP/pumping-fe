@@ -1,6 +1,11 @@
-import '@unocss/reset/tailwind-compat.css';
-import './app.scss';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
+import { QueryClientProvider } from '@tanstack/react-query';
+import queryClient from '@/libs/react-query/queryClient';
+import { ToastContainer } from 'react-toastify';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import '@unocss/reset/tailwind-compat.css';
+import 'react-toastify/dist/ReactToastify.css';
+import './app.scss';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -21,5 +26,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ToastContainer />
+      <Outlet />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  );
 }

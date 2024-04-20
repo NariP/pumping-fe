@@ -17,7 +17,7 @@ module.exports = {
   ignorePatterns: ['!**/.server', '!**/.client'],
 
   // Base config
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'plugin:unocss/recommended'],
 
   overrides: [
     // Prettier
@@ -58,7 +58,7 @@ module.exports = {
         'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
         /** import 시에 파일의 확장자를 쓰지 않도록 강제하는 규칙 */
         'import/extensions': ['error', { json: 'always' }],
-        'import/no-unresolved': 'error',
+        'import/no-unresolved': ['error', { ignore: ['uno.css', 'unocss-devtools'] }],
         /** import 구문 중괄호 사이의 member 모듈 알파벳 순으로 정렬하는 규칙 */
         'sort-imports': ['error', { ignoreDeclarationSort: true }],
         'unused-imports/no-unused-vars': [

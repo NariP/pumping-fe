@@ -1,3 +1,5 @@
+import '@unocss/reset/tailwind-compat.css';
+import './app.scss';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 
 export function Layout({ children }: { children: React.ReactNode }) {

@@ -10,7 +10,8 @@
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc",
     "test:ui": "vitest --ui",
-    "test": "vitest"
+    "test": "vitest",
+    "type:gen": "sh -c app/generator/swagger-typescript-api.sh"
   },
   "dependencies": {
     "@lukemorales/query-key-factory": "^1.3.4",
